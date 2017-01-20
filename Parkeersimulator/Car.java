@@ -4,7 +4,7 @@ import java.awt.*;
 
 public abstract class Car {
 
-    private Location location;
+    private Parkeersimulator.Location location;
     private int minutesLeft;
     private boolean isPaying;
     private boolean hasToPay;
@@ -16,7 +16,7 @@ public abstract class Car {
 
     }
 
-    public Location getLocation() {
+    public Parkeersimulator.Location getLocation() {
         return location;
     }
 
