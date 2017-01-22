@@ -180,7 +180,7 @@ public class Simulator {
             }
             break;
             case ABON:
-                for (int = 0; i < numberOfCars; i++) {
+                for (int i = 0; i < numberOfCars; i++) {
                     entranceAbonQueue.addCar(new AbonCar());
             }
             break;
