@@ -76,6 +76,7 @@ public class Simulator {
 
     }
 
+    // de Pass Houders en de Normale Parkeerders moeten in dezelfde queue staan.
     private void handleEntrance(){
     	carsArriving();
     	carsEntering(entrancePassQueue);
@@ -104,6 +105,7 @@ public class Simulator {
         addArrivingCars(numberOfCars, ABON);
     }
 
+   //hier een if statement maken voor als de binnenkomende auto een AbonnementHouder is.
     private void carsEntering(CarQueue queue){
         int i=0;
         // Remove car from the front of the queue and assign to a parking space.

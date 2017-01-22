@@ -6,6 +6,7 @@ public abstract class Car {
 
     private Parkeersimulator.Location location;
     private int minutesLeft;
+    private int maxAbonHouders;
     private boolean isPaying;
     private boolean hasToPay;
 
