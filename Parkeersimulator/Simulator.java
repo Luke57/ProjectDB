@@ -6,10 +6,12 @@ public class Simulator {
 
 	private static final String AD_HOC = "1";
 	private static final String PASS = "2";
+	private static final String ABON = "3";
 	
 	
 	private CarQueue entranceCarQueue;
     private CarQueue entrancePassQueue;
+    private CarQueue entranceAbonQueue;
     private CarQueue paymentCarQueue;
     private CarQueue exitCarQueue;
     private SimulatorView simulatorView;
@@ -32,6 +34,7 @@ public class Simulator {
     public Simulator() {
         entranceCarQueue = new CarQueue();
         entrancePassQueue = new CarQueue();
+        entranceAbonQueue = new CarQueue();
         paymentCarQueue = new CarQueue();
         exitCarQueue = new CarQueue();
         simulatorView = new SimulatorView(3, 6, 30);
@@ -76,7 +79,8 @@ public class Simulator {
     private void handleEntrance(){
     	carsArriving();
     	carsEntering(entrancePassQueue);
-    	carsEntering(entranceCarQueue);  	
+    	carsEntering(entranceCarQueue);
+    	carsEntering(entranceAbonQueue);
     }
     
     private void handleExit(){
@@ -95,7 +99,9 @@ public class Simulator {
     	int numberOfCars=getNumberOfCars(weekDayArrivals, weekendArrivals);
         addArrivingCars(numberOfCars, AD_HOC);    	
     	numberOfCars=getNumberOfCars(weekDayPassArrivals, weekendPassArrivals);
-        addArrivingCars(numberOfCars, PASS);    	
+        addArrivingCars(numberOfCars, PASS);
+        numberOfCars=getNumberOfCars(weekDayPassArrivals, weekendPassArrivals);
+        addArrivingCars(numberOfCars, ABON);
     }
 
     private void carsEntering(CarQueue queue){
@@ -172,7 +178,12 @@ public class Simulator {
             for (int i = 0; i < numberOfCars; i++) {
             	entrancePassQueue.addCar(new ParkingPassCar());
             }
-            break;	            
+            break;
+            case ABON:
+                for (int = 0; i < numberOfCars; i++) {
+                    entranceAbonQueue.addCar(new AbonCar());
+            }
+            break;
     	}
     }
     
