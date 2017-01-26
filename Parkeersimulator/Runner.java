@@ -8,7 +8,7 @@ public class Runner {
         rennen();
     }
     public static void rennen() {
-        int i = 2;
+        int i = 1;
         if(i == 1) {
             Simulator sim = new Simulator();
             sim.run();

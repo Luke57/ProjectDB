@@ -11,6 +11,7 @@ import java.awt.event.ComponentAdapter;
 
 public class GraficalUserInterface {
     private JPanel panel;
+    private JButton button1;
     private JButton RunGerage;
     //    private JButton OpenGerage;
 //    private Simulator sim;
@@ -19,8 +20,7 @@ public class GraficalUserInterface {
         RunGerage.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Simulator sim = new Simulator();
-                sim.run();
+                Runner.rennen();
             }
         });
     }
