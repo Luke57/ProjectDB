@@ -130,10 +130,7 @@ public class SimulatorView extends JFrame {
         int floor = location.getFloor();
         int row = location.getRow();
         int place = location.getPlace();
-        if (floor < 0 || floor >= numberOfFloors || row < 0 || row > numberOfRows || place < 0 || place > numberOfPlaces) {
-            return false;
-        }
-        return true;
+        return !(floor < 0 || floor >= numberOfFloors || row < 0 || row > numberOfRows || place < 0 || place > numberOfPlaces);
     }
     
     private class CarParkView extends JPanel {

@@ -5,7 +5,15 @@ package Parkeersimulator;
  */
 public class Runner {
     public static void main(String[] args) {
-        Simulator sim = new Simulator();
-        sim.run();
+        rennen();
+    }
+    public static void rennen() {
+        int i = 2;
+        if(i == 1) {
+            Simulator sim = new Simulator();
+            sim.run();
+        } else {
+            new GraficalUserInterface();
+        }
     }
 }
