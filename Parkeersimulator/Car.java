@@ -4,11 +4,11 @@ import java.awt.*;
 
 public abstract class Car {
 
-    private Parkeersimulator.Location location;
+    private Location location;
     private int minutesLeft;
-    private int maxAbonHouders;
     private boolean isPaying;
     private boolean hasToPay;
+    protected int stayMinutes;
 
     /**
      * Constructor for objects of class Car
@@ -17,12 +17,16 @@ public abstract class Car {
 
     }
 
-    public Parkeersimulator.Location getLocation() {
+    public Location getLocation() {
         return location;
     }
 
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    public int getStayMinutes() {
+        return stayMinutes;
     }
 
     public int getMinutesLeft() {
@@ -32,7 +36,7 @@ public abstract class Car {
     public void setMinutesLeft(int minutesLeft) {
         this.minutesLeft = minutesLeft;
     }
-    
+
     public boolean getIsPaying() {
         return isPaying;
     }
@@ -49,9 +53,12 @@ public abstract class Car {
         this.hasToPay = hasToPay;
     }
 
-    public void tick() {
+    /*
+     * Removes a minute from the time a Car has.
+     */
+    public void carRemoveMinute() {
         minutesLeft--;
     }
-    
+
     public abstract Color getColor();
 }
